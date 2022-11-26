@@ -7,8 +7,8 @@ marketplace_ref: {
   listing: "cortex-sap-operational"
   version: "2.0.0"
   models: ["cortex_sap_operational"]
-  override_constant: CONNECTION_NAME { value:"cortex" }
-  override_constant: GCP_PROJECT { value:"GCP Project Name" }
-  override_constant: REPORTING_DATASET { value:"Reporting Dataset Name" }
-  override_constant: CLIENT { value:"Client ID" }
+  override_constant: CONNECTION_NAME { value:"bigquery_cortex" }
+  override_constant: GCP_PROJECT { value:"cortex-qa" }
+  override_constant: REPORTING_DATASET { value:"REPORTING" }
+  override_constant: CLIENT { value:"500" }
 }
