@@ -19,5 +19,6 @@ constant: CLIENT {
 }
 
 constant: FUNCTION_DATASET {
-  value: "REPORTING"
+  value: "CDC_PROCESSED"
+  export: override_required
 }
