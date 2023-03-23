@@ -518,7 +518,7 @@ view: data_intelligence_otc {
     type: number
     sql: if(${count_of_deliveries}=0,0,round(${count_on_time_delivery}/${count_of_deliveries}*100,2))  ;;
     #html:<a href="/dashboards/168?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}">{{value}}%</a> ;;
-    html:<a href="/dashboards/cortex_sap_operational::delivery_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
+    html:<a href="/dashboards/block_cortex_sap::delivery_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
   }
 
   measure: InFullPercentage {
@@ -526,7 +526,7 @@ view: data_intelligence_otc {
     value_format: "0%"
     sql: if(${count_of_deliveries}=0,0,round(${count_in_full_delivery}/${count_of_deliveries}*100,2))  ;;
     #html:<a href="/dashboards/168?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}">{{value}}%</a> ;;
-    html:<a href="/dashboards/cortex_sap_operational::delivery_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
+    html:<a href="/dashboards/block_cortex_sap::delivery_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
   }
 
 
@@ -535,7 +535,7 @@ view: data_intelligence_otc {
     value_format: "0%"
     sql: if(${count_of_deliveries}=0,0,round(${count_otif}/${count_of_deliveries}*100,2))  ;;
     #html:<a href="/dashboards/168?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}">{{value}}%</a> ;;
-    html:<a href="/dashboards/cortex_sap_operational::delivery_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
+    html:<a href="/dashboards/block_cortex_sap::delivery_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
   }
 
 
@@ -544,7 +544,7 @@ view: data_intelligence_otc {
     value_format: "0%"
     sql: if(${count_of_deliveries}=0,0,round(${count_latedeliveries}/${count_of_deliveries}*100,2))  ;;
    #html:<a href="/dashboards/168?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}">{{value}}%</a> ;;
-    html:<a href="/dashboards/cortex_sap_operational::delivery_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
+    html:<a href="/dashboards/block_cortex_sap::delivery_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
   }
 
 
@@ -698,7 +698,7 @@ view: data_intelligence_otc {
     type: number
     sql:if(${count_of_delivery}=0,0,round(${count_return_order}/${count_of_delivery}*100,2)) ;;
     #html:<a href="/dashboards/177?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}">{{value}}%</a> ;;
-    html:<a href="/dashboards/cortex_sap_operational::returned_orders?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
+    html:<a href="/dashboards/block_cortex_sap::returned_orders?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
     #link: {
     #  label: "Returned Orders"
       #url: "/dashboards/177?Distribution+Channel={{ distribution_channel._value }}&Sales+Org={{ sales_org._value }}&Division={{ division._value }}&Product={{ product._value }}&AMPRegion={{ country._value }}"
@@ -714,7 +714,7 @@ view: data_intelligence_otc {
     type: number
     sql: if(${data_intelligence_otc.count}=0,0,round(${count_canceled_order}/${data_intelligence_otc.count}*100,2)) ;;
     #html:<a href="/dashboards/178?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}">{{value}}%</a> ;;
-    html:<a href="/dashboards/cortex_sap_operational::canceled_orders?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
+    html:<a href="/dashboards/block_cortex_sap::canceled_orders?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
 
   }
 
@@ -783,7 +783,7 @@ view: data_intelligence_otc {
     sql: ${sales_order_net_value_Global_Currency} ;;
     link: {
       label: "Sales Performance by Product"
-      url:"/dashboards/cortex_sap_operational::sales_performance_by_product?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
+      url:"/dashboards/block_cortex_sap::sales_performance_by_product?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
    }
   }
 
@@ -793,7 +793,7 @@ view: data_intelligence_otc {
     sql: ${sales_order_net_value_Global_Currency} ;;
     link: {
       label: "Sales Performance by Sales_Org"
-      url:"/dashboards/cortex_sap_operational::sales_performance_by_sales_org?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
+      url:"/dashboards/block_cortex_sap::sales_performance_by_sales_org?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
     }
   }
 
@@ -803,7 +803,7 @@ view: data_intelligence_otc {
     sql: ${sales_order_net_value_Global_Currency} ;;
     link: {
       label: "Sales Performance by Distribution Channel"
-      url:"/dashboards/cortex_sap_operational::sales_performance_by_distribution_channel?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
+      url:"/dashboards/block_cortex_sap::sales_performance_by_distribution_channel?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
     }
   }
 
@@ -813,7 +813,7 @@ view: data_intelligence_otc {
     sql: ${sales_order_net_value_Global_Currency} ;;
     link: {
       label: "Sales Performance by Division"
-      url:"/dashboards/cortex_sap_operational::sales_performance_by_division?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
+      url:"/dashboards/block_cortex_sap::sales_performance_by_division?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
     }
   }
 
@@ -911,7 +911,7 @@ view: data_intelligence_otc {
     sql: ${list_price_Global_currency}-${adjusted_price_Global_currency} ;;
     # link: {
     #   label: "Price Adjustments based on Customer Profiling"
-    #   url:"/dashboards/cortex_sap_operational::price_adjustments_based_on_customer_profiling?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
+    #   url:"/dashboards/block_cortex_sap::price_adjustments_based_on_customer_profiling?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
     # }
   }
 
@@ -921,7 +921,7 @@ view: data_intelligence_otc {
     sql: ${list_price_Global_currency} ;;
     link: {
       label: "Price Adjustments based on Product Availability"
-      url:"/dashboards/cortex_sap_operational::price_adjustments_based_on_product_availability?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
+      url:"/dashboards/block_cortex_sap::price_adjustments_based_on_product_availability?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
     }
   }
 
@@ -931,7 +931,7 @@ view: data_intelligence_otc {
       sql: ${list_price_Global_currency} ;;
       link: {
         label: "Price Adjustments based on Customer Profiling"
-        url:"/dashboards/cortex_sap_operational::price_adjustments_based_on_customer_profiling?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
+        url:"/dashboards/block_cortex_sap::price_adjustments_based_on_customer_profiling?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
       }
   }
 
@@ -948,7 +948,7 @@ view: data_intelligence_otc {
     sql: ${intercompany_price_Global_currency} ;;
     link: {
       label: "Price Adjustments based on Product Availability"
-      url:"/dashboards/cortex_sap_operational::price_adjustments_based_on_product_availability?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
+      url:"/dashboards/block_cortex_sap::price_adjustments_based_on_product_availability?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}"
     }
    }
 
@@ -1049,7 +1049,7 @@ view: data_intelligence_otc {
     type: number
     sql: if(${count_incoming_order}=0,0,round(${count_one_touch_order}/${count_incoming_order}*100,2)) ;;
     #html:<a href="/dashboards/173?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}">{{value}}%</a> ;;
-    html:<a href="/dashboards/cortex_sap_operational::one_touch_order?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
+    html:<a href="/dashboards/block_cortex_sap::one_touch_order?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}%</a> ;;
   }
 
 
@@ -1084,11 +1084,11 @@ view: data_intelligence_otc {
       <div style="background-color: #FFFFFF; border: solid 1px #4285F4; border-radius: 5px; padding: 5px 10px; height: 60px; width:100%">
         <nav style="font-size: 18px; color: #4285F4">
 
-      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/cortex_sap_operational::sap_order_to_cash_02c_01_order_fulfillment_performance_tuning?">Order Fulfillment</a>
-      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/cortex_sap_operational::sap_order_to_cash_o2c_02_order_status_snapshot?">Order Status Snapshot</a>
-      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/cortex_sap_operational::sap_order_to_cash_o2c_03_order_detailsperformance_tuning?">Order Details</a>
-      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/cortex_sap_operational::sap_order_to_cash_o2c_04_sales_performanceperformance_tuning?">Sales Performance</a>
-      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/cortex_sap_operational::sap_order_to_cash_o2c_05_billing_and_pricing_v2?Year=2022%2F01%2F01%20to%202022%2F04%2F22&ampRegion=&Sales%20Org=&Distribution%20Channel=&Division=&Product=&ampCurrency=USD">Billing and Pricing</a>
+      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_02c_01_order_fulfillment_performance_tuning?">Order Fulfillment</a>
+      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_02_order_status_snapshot?">Order Status Snapshot</a>
+      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_03_order_detailsperformance_tuning?">Order Details</a>
+      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_04_sales_performanceperformance_tuning?">Sales Performance</a>
+      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_05_billing_and_pricing_v2?Year=2022%2F01%2F01%20to%202022%2F04%2F22&ampRegion=&Sales%20Org=&Distribution%20Channel=&Division=&Product=&ampCurrency=USD">Billing and Pricing</a>
         </nav>
       </div>
     <div style="background-color: #FFFFFF; height:500px;width:100%"></div>;;
@@ -1098,9 +1098,9 @@ view: data_intelligence_otc {
     type: string
     sql: "Home" ;;
 
-    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::sap_order_to_cash_o2c_04_sales_performanceperformance_tuning?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_04_sales_performanceperformance_tuning?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
 
-  #  html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::sales_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+  #  html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::sales_performance?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
 
   }
 
@@ -1108,9 +1108,9 @@ view: data_intelligence_otc {
     type: string
     sql: "Home" ;;
 
-    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::sap_order_to_cash_o2c_03_order_detailsperformance_tuning?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_03_order_detailsperformance_tuning?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
 
-   # html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::order_details?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+   # html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::order_details?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
 
   }
 
@@ -1118,27 +1118,27 @@ view: data_intelligence_otc {
     type: string
     sql: "Home" ;;
 
-  #  html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::order_fulfillment?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+  #  html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::order_fulfillment?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
 
-    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::sap_order_to_cash_02c_01_order_fulfillment_performance_tuning?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::sap_order_to_cash_02c_01_order_fulfillment_performance_tuning?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
     }
 
   measure: Order_status_snapshot{
     type: string
     sql: "Home" ;;
 
-    #html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::order_status_snapshot?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+    #html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::order_status_snapshot?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&AMPRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
 
-    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::sap_order_to_cash_o2c_02_order_status_snapshot?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_02_order_status_snapshot?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
   }
 
   measure: billing_and_pricing{
     type: string
     sql: "Home" ;;
 
-    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::sap_order_to_cash_o2c_05_billing_and_pricing_v2?Year=2022%2F01%2F01%20to%202022%2F04%2F22&ampRegion=&Sales%20Org=&Distribution%20Channel=&Division=&Product=&ampCurrency=USD">Home</nav>  ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_05_billing_and_pricing_v2?Year=2022%2F01%2F01%20to%202022%2F04%2F22&ampRegion=&Sales%20Org=&Distribution%20Channel=&Division=&Product=&ampCurrency=USD">Home</nav>  ;;
 
-  #  html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/cortex_sap_operational::billing_and_pricing?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
+  #  html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::billing_and_pricing?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
   }
 
 }
