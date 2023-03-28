@@ -2,7 +2,7 @@
 view: currency_conversion_new {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{FUNCTION_DATASET}.CurrencyConvUtil`
+  sql_table_name: `@{GCP_PROJECT}.@{FUNCTION_DATASET}.currency_conversion`
     ;;
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -13,8 +13,8 @@ view: currency_conversion_new {
   # parameter: Currency_Required{
   #   type: string
   #   allowed_value: {
-  #     label: "USD"
-  #     value: "USD"
+  #     label: "BRL"
+  #     value: "BRL"
   #   }
   #   allowed_value: {
   #     label: "EUR"
@@ -73,7 +73,7 @@ view: currency_conversion_new {
 
   dimension: fcurr {
     type: string
-    sql: ${TABLE}.SourceCurrency_FCURR ;;
+    sql: ${TABLE}.FromCurrency_FCURR ;;
     primary_key: yes
   }
 

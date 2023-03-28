@@ -13,8 +13,8 @@ view: data_intelligence_ar {
   parameter: Currency_Required{
     type: string
     allowed_value: {
-      label: "USD"
-      value: "USD"
+      label: "BRL"
+      value: "BRL"
     }
     allowed_value: {
       label: "EUR"

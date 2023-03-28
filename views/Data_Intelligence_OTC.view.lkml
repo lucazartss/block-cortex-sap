@@ -13,8 +13,8 @@ view: data_intelligence_otc {
   parameter: Currency_Required{
     type: string
     allowed_value: {
-      label: "USD"
-      value: "USD"
+      label: "BRL"
+      value: "BRL"
     }
     allowed_value: {
       label: "EUR"
@@ -1092,7 +1092,7 @@ view: data_intelligence_otc {
       <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_02_order_status_snapshot?">Order Status Snapshot</a>
       <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_03_order_detailsperformance_tuning?">Order Details</a>
       <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_04_sales_performanceperformance_tuning?">Sales Performance</a>
-      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_05_billing_and_pricing_v2?Year=2022%2F01%2F01%20to%202022%2F04%2F22&ampRegion=&Sales%20Org=&Distribution%20Channel=&Division=&Product=&ampCurrency=USD">Billing and Pricing</a>
+      <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_05_billing_and_pricing_v2?Year=2022%2F01%2F01%20to%202022%2F04%2F22&ampRegion=&Sales%20Org=&Distribution%20Channel=&Division=&Product=&ampCurrency=BRL">Billing and Pricing</a>
         </nav>
       </div>
     <div style="background-color: #FFFFFF; height:500px;width:100%"></div>;;
@@ -1140,7 +1140,7 @@ view: data_intelligence_otc {
     type: string
     sql: "Home" ;;
 
-    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_05_billing_and_pricing_v2?Year=2022%2F01%2F01%20to%202022%2F04%2F22&ampRegion=&Sales%20Org=&Distribution%20Channel=&Division=&Product=&ampCurrency=USD">Home</nav>  ;;
+    html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::sap_order_to_cash_o2c_05_billing_and_pricing_v2?Year=2022%2F01%2F01%20to%202022%2F04%2F22&ampRegion=&Sales%20Org=&Distribution%20Channel=&Division=&Product=&ampCurrency=BRL">Home</nav>  ;;
 
   #  html:<nav style="font-size: 20px; color: #4285F4"><a style="padding: 5px; float: center; line-height: 40px" href="/dashboards/block_cortex_sap::billing_and_pricing?Distribution+Channel={{ _filters['data_intelligence_otc.distribution_channel']| url_encode }}&Sales+Org={{ _filters['data_intelligence_otc.sales_org']| url_encode }}&Division={{ _filters['data_intelligence_otc.division']| url_encode  }}&Product={{ _filters['data_intelligence_otc.product']| url_encode }}&ampRegion={{ _filters['data_intelligence_otc.country']| url_encode }}&Year={{ _filters['data_intelligence_otc.creation_date_date']| url_encode }}">{{value}}</a></nav>  ;;
   }
