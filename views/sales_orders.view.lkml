@@ -2323,6 +2323,10 @@ view: sales_orders {
       label: "JPY"
       value: "JPY"
     }
+    allowed_value: {
+      label: "BRL"
+      value: "BRL"
+    }
     hidden: no
   }
 
