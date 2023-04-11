@@ -1,6 +1,7 @@
-include: "//cortex-sap-operational/**/*.view.lkml"
-include: "//cortex-sap-operational/**/*.explore.lkml"
+# include: "//cortex-sap-operational/**/*.view.lkml"
 # include: "//cortex-sap-operational/**/*.explore.lkml"
+# include: "//cortex-sap-operational/**/*.explore.lkml"
+include: "/views/*.view.lkml"
 
 # #
 # Use LookML refinements to refine views and explores defined in the remote project.
