@@ -3,7 +3,14 @@ view: inventory_metrics_overview {
     sql: select * from `@{GCP_PROJECT}.@{REPORTING_DATASET}.InventoryKeyMetrics`
       ;;
   }
+  
   fields_hidden_by_default: yes
+
+  dimension: key {
+    type: string
+    primary_key: yes
+    sql: CONCAT(${client_mandt},${material_number_matnr},${plant_werks},${cal_year},${cal_month});;
+  }
 
   dimension: amount_in_local_currency_dmbtr {
     type: number
@@ -33,14 +40,14 @@ view: inventory_metrics_overview {
   dimension: client_mandt {
     type: string
     sql: ${TABLE}.Client_MANDT ;;
-    primary_key: yes
+    #primary_key: yes
   }
 
   dimension: company_code_bukrs {
     type: string
     sql: ${TABLE}.CompanyCode_BUKRS ;;
     label: "Company Code"
-    primary_key: yes
+    #primary_key: yes
     hidden: no
   }
 
@@ -115,13 +122,24 @@ view: inventory_metrics_overview {
     sql: ${TABLE}.InventoryTurnByMonth ;;
   }
 
+  measure: drill_fields{
+    type: sum
+    sql: 0 ;;
+    drill_fields: [material_group_name_wgbez,plant_name2_name2,material_text_maktx,average_inventory_turn]
+  }
+
+
   measure: average_inventory_turn {
     type: average
     label: "Inventory Turn"
     sql: ${inventory_turn} ;;
+    link: {
+      label: "{{ inventory_metrics_overview.material_group_name_wgbez._value }}"
+      url: "{{drill_fields._link}}"
+    }
     hidden: no
     filters: [inventory_turn: ">=0"]
-    drill_fields: [material_group_name_wgbez,plant_name2_name2,material_text_maktx,average_inventory_turn]
+    #drill_fields: [material_group_name_wgbez,plant_name2_name2,material_text_maktx,average_inventory_turn]
   }
 
   measure: sum_inventory_turn {
@@ -178,9 +196,6 @@ view: inventory_metrics_overview {
     sql: ${TABLE}.DescriptionOfMaterialType_MTBEZ ;;
     hidden: no
   }
-
-  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
-  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
   dimension_group: month_end {
     type: time
@@ -242,7 +257,7 @@ view: inventory_metrics_overview {
     hidden: no
     link: {
       label: "Stock Value Details"
-      url: "/dashboards/cortex_sap_operational::stock_value_details?Company+Name={{ _filters['inventory_by_plant.company_text_butxt']| url_encode }}&Currency={{ _filters['inventory_metrics_overview.target_currency']| url_encode }}&Plant={{ _filters['inventory_metrics_overview.plant_name2_name2']| url_encode }}&Material={{ _filters['inventory_metrics_overview.material_text_maktx']| url_encode }}&Country={{ _filters['inventory_metrics_overview.country_key_land1']| url_encode }}&Material+Type={{ _filters['inventory_metrics_overview.material_type']| url_encode }}&Stock+Type={{ _filters['inventory_by_plant.stock_characteristic']| url_encode }}"
+      url: "/dashboards/cortex_sap_operational::stock_value_details?Company+Name={{ _filters['inventory_metrics_overview.company_text_butxt']| url_encode }}&Currency={{ _filters['inventory_metrics_overview.target_currency']| url_encode }}&Plant={{ _filters['inventory_metrics_overview.plant_name2_name2']| url_encode }}&Material={{ _filters['inventory_metrics_overview.material_text_maktx']| url_encode }}&Country={{ _filters['inventory_metrics_overview.country_key_land1']| url_encode }}&Stock+Type={{ _filters['inventory_by_plant.stock_characteristic']| url_encode }}&Material+Type={{ _filters['inventory_metrics_overview.material_type']| url_encode }}"
     }
   }
 
@@ -255,6 +270,8 @@ view: inventory_metrics_overview {
     type: number
     sql: ${TABLE}.AvgInventoryByMonth ;;
   }
+
+
 
   measure: sum_inventory_value {
     type: sum

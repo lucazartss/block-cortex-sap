@@ -1,5 +1,4 @@
 view: accounts_payable_v2 {
-  
   sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.AccountsPayable`
     ;;
 
@@ -7,6 +6,13 @@ view: accounts_payable_v2 {
     type: number
     default_value: "30"
     hidden: no
+  }
+
+  dimension: key {
+    type: string
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT(${client_mandt},${accounting_document_number_belnr},${number_of_line_item_within_accounting_document_buzei},${company_code_bukrs},${target_currency_tcurr});;
   }
 
   dimension: account_number_of_vendor_or_creditor_lifnr {
@@ -33,6 +39,10 @@ view: accounts_payable_v2 {
     type: number
     sql: ${TABLE}.AmountInLocalCurrency_DMBTR * -1;;
   }
+
+  # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
+  # measures for this dimension, but you can also add measures of many different aggregates.
+  # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
   measure: total_amount_in_local_currency_dmbtr {
     type: sum
@@ -81,6 +91,12 @@ view: accounts_payable_v2 {
     type: number
     sql: ${TABLE}.CashDiscountReceivedInTargetCurrency ;;
   }
+
+
+
+
+  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
+  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
   dimension_group: clearing_date_augdt {
     type: time
@@ -296,6 +312,7 @@ view: accounts_payable_v2 {
     value_format_name: Greek_Number_Format
   }
 
+
   measure: sum_overdue_amount {
     type: sum
     sql: ${overdue_amount_in_target_currency} ;;
@@ -314,14 +331,14 @@ view: accounts_payable_v2 {
 
   dimension:  past_overdue_1_to_30day{
     type: number
-    sql: if(${Past_Due_Interval}='b1- 30 Days',(${overdue_amount_in_target_currency} ),0) ;;
+    sql: if(${Past_Due_Interval}='b1- 30 Days',(${overdue_on_past_date_in_target_currency} ),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
 
   dimension:  source_past_overdue_1_to_30day{
     type: number
-    sql: if(${Past_Due_Interval}='b1- 30 Days',(${overdue_amount_in_source_currency} ),0) ;;
+    sql: if(${Past_Due_Interval}='b1- 30 Days',(${overdue_on_past_date_in_source_currency} ),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
@@ -329,14 +346,14 @@ view: accounts_payable_v2 {
 
   dimension:  past_overdue_31_to_60day{
     type: number
-    sql: if(${Past_Due_Interval}='c31-60 Days',(${overdue_amount_in_target_currency} ),0) ;;
+    sql: if(${Past_Due_Interval}='c31-60 Days',(${overdue_on_past_date_in_target_currency} ),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
 
   dimension:  source_past_overdue_31_to_60day{
     type: number
-    sql: if(${Past_Due_Interval}='c31-60 Days',(${overdue_amount_in_target_currency} ),0) ;;
+    sql: if(${Past_Due_Interval}='c31-60 Days',(${overdue_on_past_date_in_source_currency} ),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
@@ -344,14 +361,14 @@ view: accounts_payable_v2 {
 
   dimension:  past_overdue_61_to_90day{
     type: number
-    sql: if(${Past_Due_Interval}='d61-90 Days',(${overdue_amount_in_target_currency} ),0) ;;
+    sql: if(${Past_Due_Interval}='d61-90 Days',(${overdue_on_past_date_in_target_currency} ),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
 
   dimension:  source_past_overdue_61_to_90day{
     type: number
-    sql: if(${Past_Due_Interval}='d61-90 Days',(${overdue_amount_in_target_currency} ),0) ;;
+    sql: if(${Past_Due_Interval}='d61-90 Days',(${overdue_on_past_date_in_source_currency} ),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
@@ -359,7 +376,7 @@ view: accounts_payable_v2 {
 
   dimension:  past_overdue_greater_than_90day{
     type: number
-    sql: if(${Past_Due_Interval}='e> 90 Days',(${overdue_amount_in_target_currency}),0) ;;
+    sql: if(${Past_Due_Interval}='e> 90 Days',(${overdue_on_past_date_in_target_currency}),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
@@ -367,31 +384,31 @@ view: accounts_payable_v2 {
 
   dimension:  source_past_overdue_greater_than_90day{
     type: number
-    sql: if(${Past_Due_Interval}='e> 90 Days',(${overdue_amount_in_target_currency} ),0) ;;
+    sql: if(${Past_Due_Interval}='e> 90 Days',(${overdue_on_past_date_in_source_currency} ),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
 
 
+
+
   dimension:  past_overdue_but_not_overdue{
     type: number
-    sql: if(${Past_Due_Interval}='aNot OverDue',(${overdue_amount_in_target_currency}),0) ;;
+    sql: if(${Past_Due_Interval}='aNot OverDue',(${outstanding_but_not_overdue_in_target_currency}),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
 
   dimension:  source_past_overdue_but_not_overdue{
     type: number
-    sql: if(${Past_Due_Interval}='aNot OverDue',(${overdue_amount_in_source_currency}),0) ;;
+    sql: if(${Past_Due_Interval}='aNot OverDue',(${outstanding_but_not_overdue_in_source_currency}),0) ;;
     hidden: no
     value_format_name: Greek_Number_Format
   }
 
-
-
   measure:  sum_past_overdue_1_to_30days{
     type: sum
-    sql: ${overdue_amount_in_target_currency} ;;
+    sql: ${overdue_on_past_date_in_target_currency} ;;
     filters: [Past_Due_Interval: "b1- 30 Days"]
     value_format_name: Greek_Number_Format
     hidden: no
@@ -399,7 +416,7 @@ view: accounts_payable_v2 {
 
   measure:  sum_past_overdue_1_to_30days_conv_drill{
     type: sum
-    sql: ${overdue_amount_in_target_currency} ;;
+    sql: ${overdue_on_past_date_in_target_currency} ;;
     filters: [Past_Due_Interval: "b1- 30 Days"]
     value_format_name: Greek_Number_Format
     hidden: no
@@ -411,7 +428,7 @@ view: accounts_payable_v2 {
 
   measure:  sum_past_overdue_31_to_60days{
     type: sum
-    sql: ${overdue_amount_in_target_currency} ;;
+    sql: ${overdue_on_past_date_in_target_currency} ;;
     filters: [Past_Due_Interval: "c31-60 Days"]
     value_format_name: Greek_Number_Format
     hidden: no
@@ -419,7 +436,7 @@ view: accounts_payable_v2 {
 
   measure:  sum_past_overdue_31_to_60days_conv_drill{
     type: sum
-    sql: ${overdue_amount_in_target_currency} ;;
+    sql: ${overdue_on_past_date_in_target_currency} ;;
     filters: [Past_Due_Interval: "c31-60 Days"]
     value_format_name: Greek_Number_Format
     hidden: no
@@ -431,7 +448,7 @@ view: accounts_payable_v2 {
 
   measure:  sum_past_overdue_61_to_90days{
     type: sum
-    sql: ${overdue_amount_in_target_currency} ;;
+    sql: ${overdue_on_past_date_in_target_currency} ;;
     filters: [Past_Due_Interval: "d61-90 Days"]
     value_format_name: Greek_Number_Format
     hidden: no
@@ -439,7 +456,7 @@ view: accounts_payable_v2 {
 
   measure:  sum_past_overdue_61_to_90days_conv_drill{
     type: sum
-    sql: ${overdue_amount_in_target_currency} ;;
+    sql: ${overdue_on_past_date_in_target_currency} ;;
     filters: [Past_Due_Interval: "d61-90 Days"]
     value_format_name: Greek_Number_Format
     hidden: no
@@ -451,7 +468,7 @@ view: accounts_payable_v2 {
 
   measure:  sum_past_overdue_greater_than_90days{
     type: sum
-    sql: ${overdue_amount_in_target_currency} ;;
+    sql: ${overdue_on_past_date_in_target_currency} ;;
     filters: [Past_Due_Interval: "e> 90 Days"]
     value_format_name: Greek_Number_Format
     hidden: no
@@ -459,7 +476,7 @@ view: accounts_payable_v2 {
 
   measure:  sum_past_overdue_greater_than_90days_conv_drill{
     type: sum
-    sql: ${overdue_amount_in_target_currency} ;;
+    sql: ${overdue_on_past_date_in_target_currency} ;;
     filters: [Past_Due_Interval: "e> 90 Days"]
     value_format_name: Greek_Number_Format
     hidden: no
@@ -488,9 +505,9 @@ view: accounts_payable_v2 {
   }
 
 
-  measure: sum_overdue_amount_conv_drill  {
+  measure: total_due  {
     type: sum
-    sql: (${overdue_amount_in_target_currency} + ${outstanding_but_not_overdue_in_target_currency});;
+    sql: (${overdue_on_past_date_in_target_currency} + ${outstanding_but_not_overdue_in_target_currency});;
     value_format_name: Greek_Number_Format
     hidden: no
     }
@@ -613,6 +630,8 @@ view: accounts_payable_v2 {
     value_format_name: Greek_Number_Format
     hidden: no
   }
+
+
 
   dimension: purchase_in_source_currency {
     type: number

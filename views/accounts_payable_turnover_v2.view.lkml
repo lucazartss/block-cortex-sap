@@ -5,6 +5,12 @@ view: accounts_payable_turnover_v2 {
 
   fields_hidden_by_default: yes
 
+  dimension: key {
+    type: string
+    primary_key: yes
+    sql: CONCAT(${client_mandt},${accounting_document_number_belnr},${number_of_line_item_within_accounting_document_buzei},${company_code_bukrs},${target_currency_tcurr});;
+  }
+
   dimension: account_number_of_vendor_or_creditor_lifnr {
     type: string
     sql: ${TABLE}.AccountNumberOfVendorOrCreditor_LIFNR ;;
@@ -30,9 +36,21 @@ view: accounts_payable_turnover_v2 {
     sql: (${TABLE}.AccountsPayableTurnoverInTargetCurrency * -1);;
   }
 
-  dimension: fiscal_period {
+  dimension: doc_fisc_period {
     type: string
-    sql: concat(LEFT(${doc_fisc_period},4),"/",RIGHT(${doc_fisc_period},2)) ;;
+    sql: ${TABLE}.DocFiscPeriod ;;
+  }
+
+  dimension: fiscal_period_to_date{
+    sql: DATE(CAST(LEFT(${doc_fisc_period},4) AS INT64),CAST(RIGHT(${doc_fisc_period},2) AS INT64),01) ;;
+  }
+
+  dimension_group: fiscal_period {
+    type: time
+    datatype: date
+    timeframes: [month, year]
+    sql: ${fiscal_period_to_date} ;;
+    convert_tz: no
     hidden: no
   }
 
@@ -40,7 +58,7 @@ view: accounts_payable_turnover_v2 {
     type: average
     value_format: "0.0"
     sql: NULLIF(${accounts_payable_turnover_in_target_currency},0) ;;
-    sql_distinct_key: ${fiscal_period} ;;
+    sql_distinct_key: ${fiscal_period_month} ;;
     required_fields: [doc_fisc_period]
     hidden: no
   }
@@ -103,11 +121,6 @@ view: accounts_payable_turnover_v2 {
   dimension: currency_key_waers {
     type: string
     sql: ${TABLE}.CurrencyKey_WAERS ;;
-  }
-
-  dimension: doc_fisc_period {
-    type: string
-    sql: ${TABLE}.DocFiscPeriod ;;
   }
 
   dimension: name1 {

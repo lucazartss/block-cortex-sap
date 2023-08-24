@@ -11,6 +11,12 @@ view: days_payable_outstanding_v2 {
     drill_fields: [detail*]
   }
 
+  dimension: key {
+    type: string
+    primary_key: yes
+    sql: CONCAT(${client_mandt},${company_code_bukrs},${fiscal_year},${fiscal_period},${target_currency_tcurr});;
+  }
+
   dimension: client_mandt {
     type: string
     sql: ${TABLE}.Client_MANDT ;;
@@ -38,9 +44,16 @@ view: days_payable_outstanding_v2 {
     sql: ${TABLE}.FiscalPeriod ;;
   }
 
-  dimension: Month_Year {
-    type: string
-    sql: concat(${fiscal_year},"/",${fiscal_period}) ;;
+  dimension: fiscal_period_to_date {
+    sql: DATE(CAST(${fiscal_year} AS INT64),CAST(${fiscal_period} AS INT64),01) ;;
+  }
+
+  dimension_group: fiscal_date {
+    type: time
+    datatype: date
+    timeframes: [month, year]
+    sql: ${fiscal_period_to_date} ;;
+    convert_tz: no
     hidden: no
   }
 
